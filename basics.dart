@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 
 /////////////////////////////////////////////////////////
 ////////////////2.12. Class Constructors & Named Arguments 
@@ -88,38 +88,38 @@ import 'package:flutter/cupertino.dart';
 
 ////////////////////////////////////////////////////////////////////////
 
-// 4.
+// // 4.
 
-// if we want to store the values which are passed in constructor in the varaiables which are declared. we can do in two ways:
-class Person {
-  String name;
-  int age;
-  // 1 way
-  // Person({String inputName, int age = 30}) {
-  //   name = inputName;
-  //   this.age = age;
-  // }
+// // if we want to store the values which are passed in constructor in the varaiables which are declared. we can do in two ways:
+// class Person {
+//   String name;
+//   int age;
+//   // 1 way
+//   // Person({String inputName, int age = 30}) {
+//   //   name = inputName;
+//   //   this.age = age;
+//   // }
 
-  // 2. way
-  Person({@required String this.name, int this.age = 30});
-}
-void main() {
-  // passing values for 1way
-  // var p = Person(inputName:'Max', age: 20);
-  // var p1 = Person(inputName: 'Bob');
-  // var p2 = Person(age: 30,inputName: 'Alex');
+//   // 2. way
+//   Person({@required String this.name, int this.age = 30});
+// }
+// void main() {
+//   // passing values for 1way
+//   // var p = Person(inputName:'Max', age: 20);
+//   // var p1 = Person(inputName: 'Bob');
+//   // var p2 = Person(age: 30,inputName: 'Alex');
 
-  // passing values for 2way
-  // here we have to make sure that key name should same as that of varaiable declared in the class
-  // changing 'inputName' -> 'name'
-  var p = Person(name:'Max', age: 20);
-  var p1 = Person(name: 'Bob');
-  var p2 = Person(age: 30,name: 'Alex');
-  print(p.name);
-  print(p1.name);
-  print(p1.age);
-  print(p2.name);
-}
+//   // passing values for 2way
+//   // here we have to make sure that key name should same as that of varaiable declared in the class
+//   // changing 'inputName' -> 'name'
+//   var p = Person(name:'Max', age: 20);
+//   var p1 = Person(name: 'Bob');
+//   var p2 = Person(age: 30,name: 'Alex');
+//   print(p.name);
+//   print(p1.name);
+//   print(p1.age);
+//   print(p2.name);
+// }
 
 
 
