@@ -1,3 +1,9 @@
+2.17. Adding Layout Widgets
+main
+
+2.16. Visible (Input  Output) & Invisible (Layout  Control) Widgets
+---
+
 2.15. Building a Widget Tree
 main
 
