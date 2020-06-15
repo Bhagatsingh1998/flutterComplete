@@ -1,13 +1,14 @@
-2.26. Using Private Properties
-every dart file can be called mini librarry and we can split our code in more than one file and we can put a restrictic what all can be exported from the particular file  
+2.27. Creating a New, Custom Widget
+making the UI better. we can add one more class for Text widget which is displaying the question. but its convention that one file for one class. thus, creating another file for displayingthe question.
 
+question : new file
+main
+
+2.26. Using Private Properties
 main
 
 
 2.25. A Brief Look Under The Hood
-what flutter does when setState is executed?
-setState is the function that forces flutter to re-render the user interface, however not the entire UI. in the end it calls build function again of this widget. 
-rn, it calls build for entire app. but once there are more custom widgets at that time rendering whole UI will make a difference. but flutter is smart, it will not re-render the stuff which is not changed.
 ---
 
 2.24. Stateful & Stateless Widgets

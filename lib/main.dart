@@ -1,4 +1,9 @@
+// packages import
 import 'package:flutter/material.dart';
+// own file import
+// importing the question widget, use realtive path
+import './question.dart';
+// thus, whatever is there in questions file will be avaiable in this class unless anything is marked with underscore
 
 void main() => runApp(MyApp());
 
@@ -11,17 +16,9 @@ class MyApp extends StatefulWidget {
   }
 }
 
-// if we want MyAppState class should not be used from other files ie only MyApp class can access it as both classes are in same file.
-// to indicate this, we add "_" underscore before the name(class name, variable name or function name). its a special syntax in dart which converts public class into private class 
-// class MyAppState extends State<MyApp> {
 class _MyAppState extends State<MyApp> {
-  // making variable private
-  // var questionIndex = 0;
   var _questionIndex = 0;
-  // making changes at other places
 
-  // making method private
-  // void answerQuestion() {
   void _answerQuestion() {
     setState(() {
       _questionIndex = _questionIndex + 1;
@@ -43,9 +40,12 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            Text(
-              questions[_questionIndex],
-            ),
+            // instaed of displaying the question, passingthe question into question widget
+            // Text(
+            //   questions[_questionIndex],
+            // ),
+            Question(questions[_questionIndex]),
+            // this practice will be helpful in complex app 
             RaisedButton(
               onPressed: _answerQuestion,
               child: Text('Answer1'),
