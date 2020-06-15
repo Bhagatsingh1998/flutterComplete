@@ -1,4 +1,34 @@
+2.23. Updating Correctly with Stateful Widgets
 
+why to have sateless widget?
+in our app we will have more than one widget and some widgets are only there to output something like TextWidget which just displayed whatever comes to it. thus it can be perfect stateless widget
+
+some widgets are there change the data such 'MyApp' which needed to change the question. thus, for that we need to change the StatelessWidget -> StatefulWidget
+
+MyApp widget is not taking any inout but internally it is changing its state ir question.
+
+main
+
+// why we have 2 classes? this is bec the way flutter works internally.
+  // 'MyApp' class can be recreated when the external data changes
+  // 'MyAppState' class becuse of 'State' is persistance. it is attached to the widget ie attached to the element in ui which we can see but it will be not re-created.
+    // and that imp for storing the state so that when widget is rerendered our state data does not change
+
+after doing the sepratiopn, we need to tell flutter this(MyAppState) state class belongs to MyApp class. thus connection between these classes can be make in 2 steps:
+1. state is generic type, so we should add angular(<>) brackets and inbetween pointer to our class
+  class MyAppSate extends State <MyApp>
+thus it tells thats that MyAppSate belongs to MyApp class
+
+2. adding the method in MyApp class ie 'createSate' which does not take any arg. but has to return the State type object which is connected to stateful widget. MyAppState  is the object which is connected to State hence returning that.  
+
+
+after connecting the app to StatefulWidget, flutter doesnt re-render updated ui simply by tapping on button and this is good.
+flutter will not re-render the interface on every tap of the user make and tap can be anywhere.else it will have horrible performance.
+so we need to tell flutter about the state change. Thus, we will warp our code which is changing the state within 'setState()' method which is provided by State class.
+
+
+2.22. [DART DEEP DIVE] Understanding Lists
+---
 
 2.21. Updating Widget Data (Or Using StatelessWidget Incorrectly)
 display the real question which in list and once the button is pressed next question should be displyed
