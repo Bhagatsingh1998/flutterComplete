@@ -1,4 +1,27 @@
+/////////////////////////////////////////////////////////
+////////////////2.29. Enums & Multiple Constructors
+/////////////////////////////////////////////////////////
 
+// 1.
+
+class Person {
+  String name;
+  int age;
+
+  Person({this.name, this.age = 30});
+
+  Person.onlyName(String name) {
+    this.name = name;
+    age = 60;
+  }
+}
+
+void main() {
+  var p = Person(name: 'Bob');
+  var p1 = Person.onlyName('Alex');
+  print(p.age);
+  print(p1.age);
+}
 
 /////////////////////////////////////////////////////////
 ////////////////2.12. Class Constructors & Named Arguments 
